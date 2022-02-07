@@ -20,15 +20,13 @@ function drive(direction) {
 async function main() {
     let cancel = false;
    
-
     while (!cancel) {
         const resp = await input.text('Enter a direction(or "cancel")');
-        drive(resp);
-
+        
         if (resp == 'cancel') {
             cancel = true
         } else {
-            console.log(drive);
+            drive(resp);
         }   
     }
 }
