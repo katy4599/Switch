@@ -14,14 +14,23 @@ function drive(direction) {
         case'backward':
             console.log('Driving backward');
             break
-        default:
-            console.log(`You are driving ${direction}!`);
     }
 }
 
 async function main() {
-    const resp = await input.text('Enter a direction');
-    drive(resp);
+    let cancel = false;
+   
+
+    while (!cancel) {
+        const resp = await input.text('Enter a direction(or "cancel")');
+        drive(resp);
+
+        if (resp == 'cancel') {
+            cancel = true
+        } else {
+            console.log(drive);
+        }   
+    }
 }
 
 main();
