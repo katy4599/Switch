@@ -14,6 +14,8 @@ function drive(direction) {
         case'backward':
             console.log('Driving backward');
             break
+        default:
+            console.log(`You are driving ${direction}`);
     }
 }
 
